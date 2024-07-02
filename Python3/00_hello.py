@@ -10,3 +10,6 @@ print(type(1.5)) #float
 print(type(True)) #boolean
 print(type(1 + 9j)) #boolean
 print(type("hola mundo")) #integer
+
+# --------------------------------
+
