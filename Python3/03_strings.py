@@ -62,3 +62,4 @@ print(language.lower()) #minúsculas
 print(language.lower().isupper()) #minúsculas
 print(language.startswith("Py")) #startswith si empieza con esa cadena
 print("Py" == "py")
+
