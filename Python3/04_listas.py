@@ -40,9 +40,9 @@ my_other_list.insert(3,"jesusRLV 3")
 print([1,2,3,4])
 print(my_other_list)
 
-my_list = "hola Python"
-print(my_list)
-print(type(my_list))
+my_list_2 = "hola Python"
+print(my_list_2)
+print(type(my_list_2))
 
 print("--------------------------------")
 print("remover lo que se pide")
@@ -50,6 +50,11 @@ print("remover lo que se pide")
 my_other_list.remove("jesusRLV 3")
 
 print(my_other_list)
+
+print("--------------------------------")
+print("copy")
+my_new_list = my_other_list.copy() #aquí se pone el copy
+
 
 print("--------------------------------")
 print("pop - elimina el elemento según su posición")
@@ -64,4 +69,18 @@ print("del - elimina por índice")
 del my_other_list[1]
 print(my_other_list)
 
+print("--------------------------------")
+print("reverse")
+
+#print(my_new_list.reverse())
+my_new_list.reverse()
+print(my_new_list)
 my_other_list.clear
+
+print("--------------------------------")
+print("sort")
+
+print(my_list)
+my_list.sort()
+print(my_list)
+
