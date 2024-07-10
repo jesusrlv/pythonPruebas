@@ -11,3 +11,7 @@ print(type(my_tuple))
 
 print(my_tuple[0])
 print(my_tuple[-1])
+
+print(my_tuple.count("jesus")) #cuenta los elementos dentro de la tupla 
+print(my_tuple.index("jesus")) #muestra el index de la tupla
+print(my_tuple.index("jesusrlv")) #muestra el index de la tupla 
