@@ -39,4 +39,4 @@ my_other_set = {"SQL","JS","PHP"}
 
 my_new_set = my_set.union(my_other_set)
 
-print(my_new_set)
+print(my_new_set.union(my_new_set).union(my_set).union({"C#","Ruby"}))
