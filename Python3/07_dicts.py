@@ -35,3 +35,9 @@ print("Buscar")
 
 print("jesusrlv" in my_dict)
 print("apellido" in my_dict)
+
+print("--------------------------------")
+print("borrar diccionario")
+
+print(my_dict.items())
+print(my_dict.keys())
