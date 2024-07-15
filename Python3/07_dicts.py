@@ -19,3 +19,19 @@ print(my_dict)
 print(my_other_dict)
 
 print(len(my_dict))
+
+my_dict["calle"] = "del pinar 111"
+
+print(my_dict)
+
+print("--------------------------------")
+print("Eliminar")
+
+del my_dict["calle"]
+print(my_dict)
+
+print("--------------------------------")
+print("Buscar")
+
+print("jesusrlv" in my_dict)
+print("apellido" in my_dict)
