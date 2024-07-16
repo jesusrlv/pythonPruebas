@@ -37,7 +37,18 @@ print("jesusrlv" in my_dict)
 print("apellido" in my_dict)
 
 print("--------------------------------")
-print("borrar diccionario")
+print("news items")
 
 print(my_dict.items())
 print(my_dict.keys())
+print(my_dict.values())
+
+my_list = ["nombre",1,"piso"]
+
+my_new_dict = dict.fromkeys(my_list)
+print(my_new_dict)
+
+my_new_dict = dict.fromkeys(my_dict,("jesusrlv2","jesusRLV"))
+
+print(my_new_dict)
+
