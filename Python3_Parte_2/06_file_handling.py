@@ -39,3 +39,30 @@ json_file.close() # se tiene que cerrar para poderlo leer en la consola
 with open("Python3_Parte_2/myFile.json") as my_other_file: #se genera este para lerlo
     for line in my_other_file.readlines():
         print(line)
+
+json_dict = json.load(open("Python3_Parte_2/myFile.json"))
+print(json_dict)
+print(type(json_dict))
+
+print(json_dict["nombre"])
+
+
+# .csv file
+import csv
+
+csv_file = open("Python3_Parte_2/myFile.csv", "w+")
+csv_writer = csv.writer(csv_file)
+csv_writer.writerow(["name", "surname", "age", "language", "website"]) #header del csv
+csv_writer.writerow(["rodolfo", "jesurlv", 43, "python", "https://www"]) #body del csv
+csv_writer.writerow(["jesus", "rojo", 36, "sql", ""]) #body del csv
+
+csv_file.close()
+with open("Python3_Parte_2/myFile.csv") as my_other_file: #se genera este para lerlo
+    for line in my_other_file.readlines():
+        print(line)
+
+# .xlsx file
+#import xlrd
+
+# .xml file
+import xml
