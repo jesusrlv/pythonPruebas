@@ -72,3 +72,6 @@ print(re.findall(pattern,my_string))
 email ="jesusrlv@zac.com.mx"
 pattern = r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
 print(re.findall(pattern,email))
+
+#página para patterns aprender y validat expresiones regulares
+#https://regex101.com
