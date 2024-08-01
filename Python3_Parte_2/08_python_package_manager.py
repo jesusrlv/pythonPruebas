@@ -39,5 +39,4 @@ print(arithmetics.sum_two_values(1, 4))
 
 from myotherpackage import otherarithmetics
 print(otherarithmetics.sum_two_values(1, 4))
-
 #no me dejaba
