@@ -14,4 +14,5 @@ async def root():
             "nickname":"jesusrlv"
             }
 
-#para echar a andar el server de prueba de fastAPI es 
+#para echar a andar el server de prueba de fastAPI es #source .venv/bin/activate
+#y para desactivar el server es deactivate
