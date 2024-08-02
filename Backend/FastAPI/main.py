@@ -13,3 +13,5 @@ async def root():
             "apellido":"leaños",
             "nickname":"jesusrlv"
             }
+
+#para echar a andar el server de prueba de fastAPI es 
