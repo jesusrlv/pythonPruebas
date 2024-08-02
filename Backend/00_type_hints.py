@@ -20,3 +20,9 @@ print(type(my_typed_variable))
 my_typed_variable: str = 5
 print(my_typed_variable)
 print(type(my_typed_variable))
+
+#tutorial de instalación de fastAPI
+#https://fastapi.tiangolo.com/es/tutorial/
+
+#para activar el entorno virtual .venv
+#source .venv/bin/activate
