@@ -14,5 +14,7 @@ async def root():
             "nickname":"jesusrlv"
             }
 
-#para echar a andar el server de prueba de fastAPI es #source .venv/bin/activate
+#para echar a andar el server de prueba es #source .venv/bin/activate
 #y para desactivar el server es deactivate
+
+# cargar el server de fastAPI uvicorn users:app --reload 
