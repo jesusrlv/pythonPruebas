@@ -55,18 +55,30 @@ async def usersclass():
 async def users():
     return users_list
 
+#path
 @app.get("/user/{id}")
 async def user(id: int):
-    users = filter(lambda user: user.id == id, users_list)
-    try:
-        return list(users)[0]
-    except:
-            return {"error":"no se ha encontrado el usuario"}
+    return search_user(id)
+    # users = filter(lambda user: user.id == id, users_list)
+    # try:
+    #     return list(users)[0]
+    # except:
+    #         return {"error":"no se ha encontrado el usuario"}
 
-@app.get("/userquery/")
+
+#query
+@app.get("/user/")
 async def user(id: int):
-    users = filter(lambda user: user.id == id, users_list)
-    try:
+    # users = filter(lambda user: user.id == id, users_list)
+    return search_user(id)
+    # try:
+    #     return list(users)[0]
+    # except:
+    #         return {"error":"no se ha encontrado el usuario"}
+
+def search_user(id:int):
+     users = filter(lambda user: user.id == id, users_list)
+     try:
         return list(users)[0]
-    except:
-            return {"error":"no se ha encontrado el usuario"}
+     except:
+         return {"error":"no se ha encontrado el usuario"}
