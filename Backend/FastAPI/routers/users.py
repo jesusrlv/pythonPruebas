@@ -1,7 +1,7 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-app = FastAPI()
+router = APIRouter()
 
 #iniciar el server con: uvicorn users:app --reload
 
@@ -20,7 +20,7 @@ users_list = [
     ]
 
 
-@app.get("/usersjson")
+@router.get("/usersjson")
 async def usersjson():
     return [{
         "nombre":"Rodolfo",
@@ -42,7 +42,7 @@ async def usersjson():
             }
             ]
 
-@app.get("/usersclass")
+@router.get("/usersclass")
 async def usersclass():
     return User(
         nombre="Rodolfo",
@@ -51,12 +51,12 @@ async def usersclass():
         age=40
         )
 
-@app.get("/users")
+@router.get("/users")
 async def users():
     return users_list
 
 #path
-@app.get("/user/{id}")
+@router.get("/user/{id}")
 async def user(id: int):
     return search_user(id)
     # users = filter(lambda user: user.id == id, users_list)
@@ -67,7 +67,7 @@ async def user(id: int):
 
 
 #query
-@app.get("/user/")
+@router.get("/user/")
 async def user(id: int):
     # users = filter(lambda user: user.id == id, users_list)
     return search_user(id)
@@ -83,7 +83,7 @@ def search_user(id:int):
      except:
          return {"error":"el usuario ya existe"}
      
-@app.post("/user/",status_code=201)
+@router.post("/user/",status_code=201)
 async def user(user: User): #se trae los datos de User con los tipados
     if type(search_user(user.id)) == User:
         raise HTTPException(status_code=404, detail="El usuario ya existe")
@@ -93,7 +93,7 @@ async def user(user: User): #se trae los datos de User con los tipados
         users_list.append(user)
         return user
 
-@app.put("/user/")
+@router.put("/user/")
 async def user(user: User):
 
     found = False
@@ -107,7 +107,7 @@ async def user(user: User):
     else:
         return user
     
-@app.delete("/user/{id}")
+@router.delete("/user/{id}")
 async def user(id: int):
     found = False
     for index, saved_user in enumerate(users_list):
