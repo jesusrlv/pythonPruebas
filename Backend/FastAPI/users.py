@@ -86,8 +86,8 @@ def search_user(id:int):
 @app.post("/user/",status_code=201)
 async def user(user: User): #se trae los datos de User con los tipados
     if type(search_user(user.id)) == User:
-        return HTTPException(status_code=204, detail="El usuario ya existe")
-        return {"error":"no se ha encontrado el usuario"}
+        raise HTTPException(status_code=404, detail="El usuario ya existe")
+        #return {"error":"no se ha encontrado el usuario"}
     else:
 
         users_list.append(user)
