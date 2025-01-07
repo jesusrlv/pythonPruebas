@@ -15,9 +15,9 @@ ALGORITHM = "HS256"
 ACCESS_TOKEN_DURATION = 1
 SECRET = "70c4ae2b962c2e0d46070ee86d52c08a14d4cb1a484d77a039fb4851d9db15a6"
 
-router = APIRouter(prefix="/jwtauth",
-                   tags=["jwtauth"],
-                   responses={status.HTTP_404_NOT_FOUND: {"message": "No encontrado"}})
+# router = APIRouter(prefix="/jwtauth",
+#                    tags=["jwtauth"],
+#                    responses={status.HTTP_404_NOT_FOUND: {"message": "Tu USER no encontrado"}})
 
 app = FastAPI()
 
@@ -40,17 +40,17 @@ class UserDB(User):
 users_db = {
     "jesusrlv":{
         "username": "jesusrlv",
-        "fullname": "rodolfo leaños",
+        "full_name": "rodolfo leaños",
         "email": "jesusrlv@hotmail.com",
         "disabled": False,
-        "password": "$2a$12$EV2rIACOtIoMGDjaBcghW.FRmuqlTgVXJdN83Qc9kJQ2/Nt0MdlTC "
+        "password": "$2a$12$jYbK7b.nTmXIxhZUEC4eCueDMFhq2/c.RGHhG1VkQrFdlUSE9pC4K"
     },
     "jesusrlv2":{
         "username": "jesusrlv2",
-        "fullname": "rodolfo leaños 2",
+        "full_name": "rodolfo leaños 2",
         "email": "jesusrlv2@hotmail.com",
         "disabled": True,
-        "password": "$2a$12$5oiGDuO7DGwKthXc76x0E.Achq6xgaY.m/55hqXveJR5vVsEerpV. "
+        "password": "$2a$12$pI/SZrco6L5uvTf6OQH6puBl7Ssf18WZS7lFKhb5Gy6ooCtiEXRee"
     }
 }
 
@@ -92,7 +92,7 @@ async def current_user(user: User = Depends(auth_user)):
     return user
 
 
-@router.post("/login")
+@app.post("/login")
 async def login(form: OAuth2PasswordRequestForm = Depends()):
 
     user_db = users_db.get(form.username)
@@ -112,6 +112,10 @@ async def login(form: OAuth2PasswordRequestForm = Depends()):
     return {"access_token": jwt.encode(access_token, SECRET, algorithm=ALGORITHM), "token_type": "bearer"}
 
 
-@router.get("/users/me")
+@app.get("/users/me")
 async def me(user: User = Depends(current_user)):
     return user
+
+
+#el debugger de JWT es https://jwt.io/ para encriptar
+#en bcrypt paso la contraseña 123456789 y la de 987654321 https://bcrypt-generator.com/
